@@ -15,6 +15,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// Serving static files for CSS
+app.use(express.static(path.join(__dirname, "public")));
+
 // Admin routes usages
 app.use("/admin", adminRoutes);
 

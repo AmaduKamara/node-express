@@ -1,0 +1,47 @@
+/* Product Form */
+
+.product-form {
+  width: 35rem;
+  background-color: #fff;
+  max-width: 90%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 50px;
+}
+
+.form-control {
+  margin-top: 20px;
+}
+
+.form-control,
+.form-control .title,
+.form-control input {
+  display: block;
+  width: 100%;
+}
+
+.form-control input {
+  border: 1px solid rgb(26, 194, 194);
+  border-radius: 4px;
+  font: inherit;
+  padding: 7px;
+  margin: 2px 0;
+}
+
+form button {
+  font: inherit;
+  border: 1px solid rgb(26, 194, 194);
+  border-radius: 4px;
+  margin-top: 6px;
+  padding: 7px 15px;
+  background-color: #fff;
+  cursor: pointer;
+  color: rgb(26, 194, 194);
+}
+
+form button:hover,
+form button:active {
+  background-color: rgb(26, 194, 194);
+  color: #fff;
+}
