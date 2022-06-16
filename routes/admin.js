@@ -1,14 +1,11 @@
 const express = require('express');
+const path = require('path');
 
 // Express router
 const router = express.Router()
 
-router.get("/products", (req, res) => {
-  res.json({ method: "GET products" });
-});
-
-router.post("/add-product", (req, res) => {
-  res.json({ method: "POST method added" });
+router.get("/add-product", (req, res) => {
+  res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'))
 });
 
 module.exports = router
