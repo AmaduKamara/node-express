@@ -1,5 +1,9 @@
 const express = require("express");
 
+// File imports
+const adminRoutes = require("./routes/admin.js");
+const shopRoutes = require("./routes/shop.js");
+
 // Initialize express app
 const app = express();
 app.use(express.json());
@@ -10,30 +14,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// Routes
-app.get("/", (req, res) => {
-  res.json({ method: "GET method ran" });
-});
+// Admin routes usages
+app.use(adminRoutes);
 
-app.get("/products", (req, res) => {
-  res.json({ method: "GET products" });
-});
-
-app.post("/add-product", (req, res) => {
-  res.json({ method: "POST method added" });
-});
-
-app.get("/products/:id", (req, res) => {
-  res.json({ method: "GET method to get single product" });
-});
-
-app.delete("/products/:id", (req, res) => {
-  res.json({ method: "DELETE method to delete single product" });
-});
-
-app.patch("/products/:id", (req, res) => {
-  res.json({ method: "PATCH method to patch single product" });
-});
+// Shop routes usages
+app.use(shopRoutes);
 
 const PORT = 4000;
 
