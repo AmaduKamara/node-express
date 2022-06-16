@@ -15,11 +15,15 @@ app.use((req, res, next) => {
 });
 
 // Admin routes usages
-app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 
 // Shop routes usages
-app.use(shopRoutes);
+app.use("/shop", shopRoutes);
 
+// 404 catch all route
+app.use((req, res, next) => {
+  res.status(404).json({ error: "404: Route not available" });
+});
 const PORT = 4000;
 
 app.listen(PORT, () => {
