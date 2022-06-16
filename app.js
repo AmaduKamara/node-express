@@ -15,8 +15,24 @@ app.get("/", (req, res) => {
   res.json({ method: "GET method ran" });
 });
 
+app.get("/products", (req, res) => {
+  res.json({ method: "GET products" });
+});
+
 app.post("/add-product", (req, res) => {
   res.json({ method: "POST method added" });
+});
+
+app.get("/products/:id", (req, res) => {
+  res.json({ method: "GET method to get single product" });
+});
+
+app.delete("/products/:id", (req, res) => {
+  res.json({ method: "DELETE method to delete single product" });
+});
+
+app.patch("/products/:id", (req, res) => {
+  res.json({ method: "PATCH method to patch single product" });
 });
 
 const PORT = 4000;
